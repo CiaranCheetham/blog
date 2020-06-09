@@ -15,6 +15,9 @@ class NewVisitorTest(unittest.TestCase):
         self.browser.get('http://localhost:8000')
 
         self.assertIn('Ciaran', self.browser.title)
+
+
+
         self.fail('Finish the test!')
 
 

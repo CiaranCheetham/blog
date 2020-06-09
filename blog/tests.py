@@ -1,7 +1,13 @@
+from django.urls import resolve
 from django.test import TestCase
+from django.http import HttpRequest
+
+from blog.views import post_list
 
 
-class SmokeTest(TestCase):
+class HomeTest(TestCase):
 
-    def test_bad_maths(self):
-        self.assertEqual(1 + 1, 3)
+    def test_post_list_returns_correct_html(self):
+        response = self.client.get('/')
+        self.assertTemplateUsed(response, 'blog/post_list.html')
+
