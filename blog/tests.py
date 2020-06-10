@@ -5,9 +5,9 @@ from django.http import HttpRequest
 from blog.views import post_list
 
 
-class HomeTest(TestCase):
+class BasicCVTest(TestCase):
 
-    def test_post_list_returns_correct_html(self):
-        response = self.client.get('/')
-        self.assertTemplateUsed(response, 'blog/post_list.html')
+    def test_cv_returns_correct_html(self):
+        response = self.client.get('/cv/')
+        self.assertTemplateUsed(response, 'cvtemplates/cv_view.html')
 

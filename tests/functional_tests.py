@@ -2,7 +2,7 @@ from selenium import webdriver
 import unittest
 
 
-class NewVisitorTest(unittest.TestCase):
+class VisitorTest(unittest.TestCase):
 
     def setUp(self):
         self.browser = webdriver.Firefox()
@@ -12,7 +12,7 @@ class NewVisitorTest(unittest.TestCase):
 
     def test_browser_title_correct(self):
 
-        self.browser.get('http://localhost:8000')
+        self.browser.get('http://localhost:8000/cv')
 
         self.assertIn('Ciaran', self.browser.title)
 
