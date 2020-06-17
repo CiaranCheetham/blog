@@ -7,7 +7,7 @@ from blog.views import post_list
 
 class BasicCVTest(TestCase):
 
-    def test_cv_returns_correct_html(self):
+    def test_cv_returns_correct_template(self):
         response = self.client.get('/cv/')
         self.assertTemplateUsed(response, 'cvtemplates/cv_view.html')
 

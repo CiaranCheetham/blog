@@ -95,5 +95,5 @@ def comment_remove(request, pk):
     return redirect('post_detail', pk=comment.post.pk)
 
 
-def cv_view(request):  # Will need to add pk later on
+def cv_view(request):  # Will need to add pk later on?
     return render(request, 'cvtemplates/cv_view.html',)
