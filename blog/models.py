@@ -4,8 +4,12 @@ from django.utils import timezone
 
 
 class CVSection(models.Model):
+    # This model represents one section of the CV. The title of the section is the primary key.
     section_name = models.CharField(max_length=50, primary_key=True)
     text = models.TextField()
+
+    def __str__(self):
+        return self.text
 
 
 class Post(models.Model):
