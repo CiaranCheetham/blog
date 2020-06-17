@@ -3,8 +3,8 @@ from django.utils import timezone
 from django.shortcuts import render, get_object_or_404
 from django.shortcuts import redirect
 from django.contrib.auth.decorators import login_required
-from .forms import PostForm, CommentForm
-from .models import Post, Comment
+from .forms import PostForm, CommentForm, CVForm
+from .models import Post, Comment, CVSection
 
 
 def post_list(request):
@@ -97,3 +97,17 @@ def comment_remove(request, pk):
 
 def cv_view(request):  # Will need to add pk later on?
     return render(request, 'cvtemplates/cv_view.html',)
+
+
+def cv_edit(request, pk):
+    section = get_object_or_404(CVSection, pk=pk)
+    if request.method == "POST":
+        form = CVForm(request.POST, instance=section)
+        if form.is_valid():
+            new_section = form.save(commit=False)
+            new_section.save()
+            return redirect('cv_view')
+    else:
+        form = CVForm(instance=section)
+    return render(request, 'cvtemplates/cv_edit.html', {'form': form})
+
