@@ -5,11 +5,16 @@
     <h1> Ciaran Cheetham - CV </h1>
     <a href = "https://www.linkedin.com/in/ciaran-cheetham-509b21172/">LinkedIn</a><hr>
 
-    <h2>Profile</h2>
+    <h2>Profile <a href = "/cv/edit/profile/" class="profile"> <span class = "glyphicon glyphicon-edit"></span></a></h2>
+    <p>{{ profile.text }}</p>
     <h2>Experience <a href = "/cv/edit/exp/" class="exp"> <span class="glyphicon glyphicon-edit"></span></a></h2>
-    <h2>Education</h2>
-    <h2>Projects</h2>
-    <h2>Achievements and Interests</h2>
+    <p>{{ exp.text }}</p>
+    <h2>Education <a href = "/cv/edit/education/" class="education"> <span class="glyphicon glyphicon-edit"></span></a></h2>
+    <p>{{ education.text }}</p>
+    <h2>Projects <a href = "/cv/edit/projects/" class="projects"> <span class = "glyphicon glyphicon-edit"></span></a></h2>
+    <p>{{ projects.text }}</p>
+    <h2>Achievements and Interests <a href = "/cv/edit/interests/" class="interests"> <span class = "glyphicon glyphicon-edit"></span></a></h2>
+    <p>{{ interests.text }}</p>
     <h3>References available upon request</h3>
 
 {% endblock %}

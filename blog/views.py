@@ -96,7 +96,18 @@ def comment_remove(request, pk):
 
 
 def cv_view(request):  # Will need to add pk later on?
-    return render(request, 'cvtemplates/cv_view.html',)
+    exp_obj = get_object_or_404(CVSection, pk='exp')
+    profile_obj = get_object_or_404(CVSection, pk='profile')
+    education_obj = get_object_or_404(CVSection, pk='education')
+    projects_obj = get_object_or_404(CVSection, pk='projects')
+    interests_obj = get_object_or_404(CVSection, pk='interests')
+
+    return render(request, 'cvtemplates/cv_view.html',
+                  {'exp': exp_obj,
+                   'profile': profile_obj,
+                   'education': education_obj,
+                   'projects': projects_obj,
+                   'interests': interests_obj})
 
 
 def cv_edit(request, pk):
