@@ -36,11 +36,20 @@ h1, h2, h3, h4 {
 }
 
 .top-menu, .top-menu:hover, .top-menu:visited {
-    color: #ffffff;
-    float: right;
-    font-size: 26pt;
+     color: #ffffff;
+     float: right;
+     font-size: 26pt;
+     margin-right: 20px;
+ }
+
+ .middle-menu {
+    position: absolute;
+    left: 50%;
     margin-right: 20px;
-}
+    color: #ffffff;
+    font-size: 26pt;
+
+  }
 
 .post {
     margin-bottom: 70px;

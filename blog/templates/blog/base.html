@@ -17,8 +17,11 @@
             {% else %}
                 <a href="{% url 'login' %}" class="top-menu"><span class="glyphicon glyphicon-lock"></span></a>
             {% endif %}
+            <div class="middle-menu">
+                <a href="/" class="top-menu">Blog</a>
+                <a href="{% url 'cv_view' %}" class="top-menu">CV</a>
+            </div>
             <h1><a href="/">Ciaran Cheetham</a></h1>
-            <a href="{% url 'cv_view' %}">CV</a>
         </div>
         <div class="content container">
             <div class="row">
