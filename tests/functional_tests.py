@@ -1,5 +1,6 @@
 from selenium import webdriver
 import unittest
+import time
 
 
 class VisitorTest(unittest.TestCase):
@@ -13,11 +14,24 @@ class VisitorTest(unittest.TestCase):
     # Must change this to be logged in!
     def test_can_view_and_edit_cv_when_logged_in(self):
 
-        # Ciaran wants to view and edit his CV - he visits his web page
+        # Ciaran wants to view and edit his CV - he visits his web page and logs in
         self.browser.get('http://localhost:8000/')
+        login_btn = self.browser.find_element_by_class_name('top-menu')
+        login_btn.click()
+        user_field = self.browser.find_element_by_id('id_username')
+        user_field.send_keys('ciaran')
+        pswd_btn = self.browser.find_element_by_id('id_password')
+        pswd_btn.send_keys('testpassword')
+        time.sleep(2)
+        submit_btn = self.browser.find_element_by_xpath("//input[@type='submit']")
+        submit_btn.click()
+
+        # He is redirected to the home page
+        self.assertEqual(self.browser.current_url, 'http://localhost:8000/')
 
         # He recognises and presses the CV button at the top of the page
-        cv_btn = self.browser.find_element_by_tag_name
+        cv_btn = self.browser.find_element_by_link_text('CV')
+        cv_btn.click()
         self.assertEqual(self.browser.current_url, 'http://localhost:8000/cv/')
 
         # The title of the web page shows his name
@@ -111,15 +125,29 @@ class VisitorTest(unittest.TestCase):
         body_text = self.browser.find_element_by_tag_name('body').text
         self.assertIn('These are my interests', body_text)
 
-        self.fail('Finish the test!')
-
     def test_cannot_edit_cv_when_not_logged_in(self):
 
         # A local ne'er do well wants to edit Ciaran's CV without his permission
-        # He goes to the CV page
+        # He goes to the CV page by pressing the CV button
+        self.browser.get('http://localhost:8000/')
+        cv_btn = self.browser.find_element_by_link_text('CV')
+        cv_btn.click()
+        self.assertEqual(self.browser.current_url, 'http://localhost:8000/cv/')
+
+        # He sees that there are no buttons he can press which would allow him to edit the CV
+        edit_btn_names = ['profile', 'exp', 'education', 'interests', 'projects']
+        for btn_name in edit_btn_names:
+            try:
+                self.browser.find_element_by_class_name(btn_name)
+                self.fail()
+            except:
+                pass
 
         # He attempts to edit the page by going directly to a URL he suspects will grant him access
-        self.fail('Make login test')
+        self.browser.get('http://localhost:8000/cv/edit/profile/')
+
+        # He is greeted with the login screen, and realises he cannot edit the CV without being logged in
+        self.assertEqual(self.browser.current_url, 'http://localhost:8000/accounts/login/?next=/cv/edit/profile/')
 
 
 if __name__ == '__main__':

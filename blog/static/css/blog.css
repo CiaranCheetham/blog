@@ -44,11 +44,8 @@ h1, h2, h3, h4 {
 
  .middle-menu {
     position: absolute;
-    left: 50%;
-    margin-right: 20px;
-    color: #ffffff;
-    font-size: 26pt;
-
+    left: 30%;
+    top: 6.3%;
   }
 
 .post {
@@ -63,4 +60,10 @@ h1, h2, h3, h4 {
 
 .comment {
     margin: 20px 0px 20px 20px;
+}
+
+@media only screen and (max-width: 1200px) {
+  .my-name {
+    display: none;
+  }
 }

@@ -110,6 +110,7 @@ def cv_view(request):  # Will need to add pk later on?
                    'interests': interests_obj})
 
 
+@login_required
 def cv_edit(request, pk):
     section = get_object_or_404(CVSection, pk=pk)
     if request.method == "POST":
