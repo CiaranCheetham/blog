@@ -1,6 +1,6 @@
 h1 a, h2 a {
     color: #00000;
-    font-family: 'Lobster';
+    font-family: 'Inconsolata';
 }
 
 .page-header {
@@ -20,7 +20,7 @@ h1 a, h2 a {
 }
 
 h1, h2, h3, h4 {
-    font-family: 'Lobster', cursive;
+    font-family: 'Inconsolata', cursive;
 }
 
 .date {
@@ -39,7 +39,8 @@ h1, h2, h3, h4 {
      color: #ffffff;
      float: right;
      font-size: 26pt;
-     margin-right: 20px;
+     font-family: 'Inconsolata';
+     margin-right: 25px;
  }
 
  .middle-menu {
@@ -52,6 +53,9 @@ h1, h2, h3, h4 {
     margin-bottom: 70px;
     padding-left: 15px;
     overflow-wrap: break-word;
+    font-family: 'Calibri';
+    font-size: 11.5pt;
+    line-height: 115%;
 }
 
 .post h2 a, .post h2 a:visited {
@@ -60,6 +64,17 @@ h1, h2, h3, h4 {
 
 .comment {
     margin: 20px 0px 20px 20px;
+}
+
+.cv-head {
+    margin-left: 15px;
+}
+
+.cv-text {
+    font-family: 'Calibri';
+    font-size: 14pt;
+    margin-left: 25px;
+    margin-bottom: 30px;
 }
 
 @media only screen and (max-width: 1200px) {

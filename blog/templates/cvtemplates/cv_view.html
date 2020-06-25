@@ -5,16 +5,16 @@
         <h1> Ciaran Cheetham - CV </h1>
         <a href = "https://www.linkedin.com/in/ciaran-cheetham-509b21172/">LinkedIn</a><hr>
 
-        <h2>Profile {% if user.is_authenticated %} <a href = "/cv/edit/profile/" class="profile"> <span class = "glyphicon glyphicon-edit"></span></a> {% endif %}</h2>
-        <p>{{ profile.text }}</p>
-        <h2>Experience {% if user.is_authenticated %} <a href = "/cv/edit/exp/" class="exp"> <span class="glyphicon glyphicon-edit"></span></a>{% endif %}</h2>
-        <p>{{ exp.text }}</p>
-        <h2>Education {% if user.is_authenticated %} <a href = "/cv/edit/education/" class="education"> <span class="glyphicon glyphicon-edit"></span></a>{% endif %}</h2>
-        <p>{{ education.text }}</p>
-        <h2>Projects {% if user.is_authenticated %} <a href = "/cv/edit/projects/" class="projects"> <span class = "glyphicon glyphicon-edit"></span></a>{% endif %}</h2>
-        <p>{{ projects.text }}</p>
-        <h2>Achievements and Interests {% if user.is_authenticated %} <a href = "/cv/edit/interests/" class="interests"> <span class = "glyphicon glyphicon-edit"></span></a>{% endif %}</h2>
-        <p>{{ interests.text }}</p>
-        <h3>References available upon request</h3>
+        <h2 class="cv-head">Profile {% if user.is_authenticated %} <a href = "/cv/edit/profile/" class="profile"> <span class = "glyphicon glyphicon-edit"></span></a> {% endif %}</h2>
+        <p class="cv-text">{{ profile.text }}</p>
+        <h2 class="cv-head">Experience {% if user.is_authenticated %} <a href = "/cv/edit/exp/" class="exp"> <span class="glyphicon glyphicon-edit"></span></a>{% endif %}</h2>
+        <p class="cv-text">{{ exp.text }}</p>
+        <h2 class="cv-head">Education {% if user.is_authenticated %} <a href = "/cv/edit/education/" class="education"> <span class="glyphicon glyphicon-edit"></span></a>{% endif %}</h2>
+        <p class="cv-text">{{ education.text }}</p>
+        <h2 class="cv-head">Projects {% if user.is_authenticated %} <a href = "/cv/edit/projects/" class="projects"> <span class = "glyphicon glyphicon-edit"></span></a>{% endif %}</h2>
+        <p class="cv-text">{{ projects.text }}</p>
+        <h2 class="cv-head">Achievements and Interests {% if user.is_authenticated %} <a href = "/cv/edit/interests/" class="interests"> <span class = "glyphicon glyphicon-edit"></span></a>{% endif %}</h2>
+        <p class="cv-text">{{ interests.text }}</p>
+        <h3 class="cv-head">References available upon request</h3>
     </body>
 {% endblock %}
