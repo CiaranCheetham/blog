@@ -11,7 +11,6 @@ class VisitorTest(unittest.TestCase):
     def tearDown(self):
         self.browser.quit()
 
-    # Must change this to be logged in!
     def test_can_view_and_edit_cv_when_logged_in(self):
 
         # Ciaran wants to view and edit his CV - he visits his web page and logs in
